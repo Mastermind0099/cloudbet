@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Cloudbet Auto Bet Placer",
+  "version": "1.0",
+  "description": "Automatically detects and places FIFA GT bets from Cloudbet.",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["https://www.cloudbet.com/*", "https://chatgpt.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.cloudbet.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
