@@ -18,7 +18,7 @@ function refreshPage() {
 function checkForNewBets() {
     if (!autoBetActive) return;
     
-    let bets = document.querySelectorAll(".bet-offer-class"); // Adjust selector based on Cloudbet UI
+    let bets = document.querySelectorAll("[data-component='event-card']"); // Adjust selector based on Cloudbet UI
     bets = Array.from(bets).filter(bet => bet.innerText.includes("GT Nations League"));
     
     if (bets.length > 0) {
